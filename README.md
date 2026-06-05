@@ -3,7 +3,7 @@ Team
 - Leandro Baumann
 
 
-Kurzbeschreibung: 
+<h2> Kurzbeschreibung: </h2>
  <br>
  Wir alle kennen das. Wieder einmal sind wir auf der Suche nach einem passenden Parkplatz. Wir haben die Lösung! Der Parkhausfinder Basel schlägt dir das passende Parkhaus vor und zeigt dir die Anzahl der freien Parkplätze in Echtzeit an, sodass du dir keine Sorgen machen musst, ob das Parkhaus voll ist oder nicht. Mit der Navigation kannst du direkt deine Route planen und mithilfe des Stadtplans hast du alle Parkhäuser immer im Überblick.
 
