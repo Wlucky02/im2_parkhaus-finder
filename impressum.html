@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parkhaus Finder Basel</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" /> 
+</head>
+
+<body> 
+
+  <!-- Hintergrund -->
+  <div class="overlay"></div>
+
+  <!-- HEADER -->
+<header class="header">
+
+    <div class="logo">
+      <i class="fa-solid fa-location-dot"></i>
+      <h1>Parkhaus-Finder-<span>Basel</span></h1>
+    </div>
+
+    <button class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-buttons" id="navMenu">
+      <a href="stadtplan.html" class="nav-btn">Stadtplan</a>
+      <a href="index.html" class="nav-btn">Parkingfinder</a>
+      <a href="ueber_uns.html" class="nav-btn">Über uns</a>
+    </nav>
+
+  </header>
+
+  <section class="impressum-section">
+
+  <h1>Impressum</h1>
+
+  <div class="impressum-content">
+
+    <h2>Verantwortliche Instanz:</h2>
+
+    <p>
+      <strong>Parkhaus-Finder-Basel</strong><br>
+      Schweiz<br>
+      E-Mail: parkhaus-finder@gmail.com<br>
+      Telefonnummer: 0775204094
+    </p>
+
+    <h2>Haftungsausschluss:</h2>
+
+    <p>
+      Der Verfasser übernimmt keine Verantwortung für die Richtigkeit,
+      Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der
+      Informationen auf dieser Webseite.
+    </p>
+
+    <p>
+      Haftungsansprüche gegen den Verfasser wegen Schäden materieller oder
+      immaterieller Natur, die durch den Zugriff, die Nutzung oder
+      Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der
+      Verbindung oder durch technische Störungen entstanden sind, werden
+      ausgeschlossen.
+    </p>
+
+    <p>
+      Alle Angebote sind freibleibend und unverbindlich. Der Verfasser
+      behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte
+      Angebot ohne separate Ankündigung zu verändern, zu ergänzen, zu
+      löschen oder die Veröffentlichung zeitweise oder endgültig
+      einzustellen.
+    </p>
+
+    <h2>Haftungsausschluss für Inhalte und Links:</h2>
+
+    <p>
+      Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres
+      Verantwortungsbereichs. Eine Haftung für solche Webseiten wird
+      vollumfänglich abgelehnt.
+    </p>
+
+    <p>
+      Der Zugang und die Nutzung solcher Webseiten erfolgen auf eigene
+      Gefahr des Nutzers oder der Nutzerin.
+    </p>
+
+    <h2>Urheberrechtserklärung:</h2>
+
+    <p>
+      Das Urheberrecht sowie alle anderen Rechte an den Inhalten, Bildern,
+      Fotos und anderen Dateien auf der Webseite gehören ausschliesslich
+      Parkhaus-Finder-Basel oder den ausdrücklich benannten Rechteinhabern.
+    </p>
+
+    <p>
+      Jede Art der Vervielfältigung, Bearbeitung, Verbreitung und jede Art
+      der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen der
+      vorherigen schriftlichen Zustimmung des jeweiligen Rechteinhabers.
+    </p>
+
+  </div>
+
+</section>
+
+
+    <!-- FOOTER -->
+  <footer>
+ <a href="impressum.html">Impressum</a>
+  </footer>
+
+    
+
+  <script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+</script>
+
+  </body>
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parkhaus Finder Basel</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Hintergrund -->
+  <div class="overlay"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+
+  <div class="logo">
+    <i class="fa-solid fa-location-dot"></i>
+    <h1>Parkhaus-Finder-<span>Basel</span></h1>
+  </div>
+
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <nav class="nav-buttons" id="navMenu">
+
+    <a href="stadtplan.html" class="nav-btn">
+      Stadtplan
+    </a>
+
+    <a href="index.html" class="nav-btn">
+      Parkingfinder
+    </a>
+
+    <a href="ueber_uns.html" class="nav-btn">
+      Über uns
+    </a>
+  </nav>
+
+</header>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div>Parkhaussuche</div>
+    <div id="date">--.--.--</div>
+    <div id="clock">--:--:--</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <div class="parking-header">
+      <div class="parking-icon">P</div>
+      <div class="parking-title">Clarahuus</div>
+    </div>
+
+    <div class="free-spaces">
+      Parkplätze frei:
+      <span id="freeCount">49</span>
+    </div>
+
+    <div class="info">
+
+      <p>
+        <span class="label">Adresse:</span>
+        Webergasse 34, 4058 Basel
+
+
+      </p>
+
+      <p>
+        <span class="label">Öffnungszeiten:</span>
+        Mo–Sa 06.00–01.00 Uhr  
+      </p>
+<p>
+      <div class="time">Sonntag geschlossen</div>
+      </p>
+
+    <div class="price-section">
+
+  <div class="price-group">
+
+    <div class="price-row header">
+      <div class="time">Montag bis Samstag</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">bis 30 Min.</div>
+      <div class="cost">CHF 1.00</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">bis 60 Min.</div>
+      <div class="cost">CHF 2.00</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">bis 90 Min.</div>
+      <div class="cost">CHF 3.00</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">bis 120 Min.</div>
+      <div class="cost">CHF 4.00</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">jede weitere Std.</div>
+      <div class="cost">CHF 4.00</div>
+    </div>
+
+  </div>
+
+</div>
+
+      <p class="website">
+        <span class="label">Webseite:</span>
+        <a href="https://clarahuus.ch/anreise-parking/" target="_blank">
+          www.clarahuus.ch
+        </a>
+      </p>
+
+    </div>
+
+    <div class="map">
+      <img src="bilder/karte_clarahuus.jpg" alt="Karte Clarahuus">
+    </div>
+
+    <button class="nav-btn" onclick="navigateToParking()">
+      zur Navigation
+    </button>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="impressum.html">Impressum</a>
+  </footer>
+
+  <!-- SCRIPT -->
+   <script type="module" src="js/detail-ansich.js"></script>
+   
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+</script>
+
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = String(now.getFullYear()).slice(2);
+
+      const clock = document.getElementById('clock');
+      const date = document.getElementById('date');
+
+      if (clock) clock.textContent = `${hours}:${minutes}:${seconds}`;
+      if (date) date.textContent = `${day}.${month}.${year}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function navigateToParking() {
+      window.open(
+        "https://maps.app.goo.gl/H75TMxgUATKW8PJk9",
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+</html>

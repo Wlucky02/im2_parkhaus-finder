@@ -1,0 +1,1164 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   BASIS / BODY
+========================= */
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background: #f2f2f2;
+}
+
+/* =========================
+   HINTERGRUND
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(255,255,255,0.88),
+                    rgba(255,255,255,0.88)),
+    url("bilder/hintergrund_parkhaus.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  z-index: -1;
+}
+
+/* =========================
+   HEADER + NAVIGATION
+========================= */
+
+.header {
+  display: flex;
+  flex-direction: column;   /* <-- alles untereinander */
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Logo oben */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Navigation mittig */
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Timer unten */
+.timer {
+  margin-top: auto; /* schiebt ihn nach unten */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Hamburger optional oben rechts */
+.hamburger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+/* Buttons + Links vereinheitlicht */
+.nav-btn,
+.nav-buttons button {
+  display: inline-block;
+  background: black;
+  color: white;
+
+  padding: 15px 35px;
+  border-radius: 12px;
+
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover,
+.nav-buttons button:hover {
+  background: #222;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   MAIN / GRID (Startseite)
+========================= */
+
+main {
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+  margin-top: 60px;
+}
+
+/* CARDS */
+
+.card {
+  background: black;
+  color: white;
+
+  border-radius: 15px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+    aspect-ratio: 16 / 9;
+
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.free {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+/* =========================
+   TOP SECTION (Tabelle)
+========================= */
+
+.top-section {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.top-section h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+  border-spacing: 0 20px;
+}
+
+th {
+  font-size: 22px;
+}
+
+td {
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* RANKS */
+
+.rank {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.rank-green { background: #2da44e; }
+.rank-orange { background: #f39c12; }
+
+/* BUTTONS */
+
+.route-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.route-btn:hover {
+  background: #2da44e;
+}
+
+/* =========================
+   MAP PAGE
+========================= */
+
+.map-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+  padding-top: 40px;
+}
+
+/* LEGENDE */
+
+.legend {
+  margin-top: 80px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.legend-item i {
+  font-size: 70px;
+}
+
+.legend-item p {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Farben */
+
+.green { color: #25a55b; }
+.orange { color: #e28712; }
+.red { color: #ff1048; }
+
+/* MAP */
+
+.map-container {
+  position: relative;
+  width: 780px;
+
+  border: 4px solid black;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+
+  margin-top: 40px;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+/* CSS MARKER */
+
+.marker {
+  position: absolute;
+  width: 28px;
+  height: 56px;
+
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.marker::before {
+  content: "";
+  position: absolute;
+
+  width: 10px;
+  height: 10px;
+
+  background: white;
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.marker.green { background: #25a55b; }
+.marker.orange { background: #e28712; }
+.marker.red { background: #ff1048; }
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+
+  margin: 120px auto 0;
+  width: 90%;
+  max-width: 1200px;
+
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 320px;
+  margin-left: 125px;
+  margin-top: 100px;
+
+  border: 4px solid black;
+  border-radius: 12px;
+
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  max-width: 700px;
+  color: #111;
+
+  margin-left: 400px;
+  margin-top: -510px;
+}
+
+.about-text h2 {
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* =========================
+   IMPRESSUM
+========================= */
+
+.impressum-section {
+  max-width: 900px;
+  margin: 80px auto;
+  color: black;
+}
+
+.impressum-section h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 60px;
+}
+
+.impressum-section h2 {
+  font-size: 24px;
+  margin: 45px 0 20px;
+}
+
+.impressum-section p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  padding: 80px 20px 30px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.custom-pin {
+  background: transparent;
+  border: none;
+}
+
+.custom-pin .pin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Farben */
+.custom-pin .red {
+  background: #ff1048;
+}
+
+.custom-pin .orange {
+  background: #e28712;
+}
+
+.custom-pin .green {
+  background: #25a55b;
+}
+
+css
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: #111;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HINTERGRUND
+========================= */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.88),
+      rgba(255,255,255,0.88)
+    ),
+    url("bilder/hintergrund_parkhaus.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  z-index: -1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  position: relative; /* Das fesselt das mobile Menü an den oberen Header-Bereich! */
+}
+
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 35px;
+}
+
+.logo i {
+  font-size: 48px;
+  color: #1f73ff;
+}
+
+.logo h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: #29a866;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: black;
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 30px;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #222;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: 90%;
+  max-width: 950px;
+
+  margin: 20px auto 80px;
+
+  text-align: center;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  margin-bottom: 35px;
+}
+
+/* =========================
+   PARKING HEADER
+========================= */
+
+.parking-header {
+  background: #29a866;
+
+  color: white;
+
+  border-radius: 18px;
+
+  padding: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+
+  margin-bottom: 50px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.parking-icon {
+  width: 85px;
+  height: 85px;
+
+  background: #1262c9;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 62px;
+  font-weight: bold;
+}
+
+.parking-title {
+  font-size: 56px;
+  font-weight: 700;
+}
+
+/* =========================
+   FREIE PLÄTZE
+========================= */
+
+.free-spaces {
+  margin-bottom: 55px;
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.free-spaces span {
+  font-size: 30px;
+  margin-left: 12px;
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info {
+  max-width: 650px;
+
+  margin: auto;
+
+  text-align: left;
+
+  background: rgba(255,255,255,0.72);
+
+  padding: 40px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.info p {
+  margin-bottom: 22px;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.label {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* =========================
+   PREISE
+========================= */
+
+.price-section {
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.price-section p {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   WEBSITE
+========================= */
+
+.website a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map {
+  width: 100%;
+  max-width: 340px;
+
+  height: 260px;
+
+  margin: 50px auto;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  border: 2px solid #555;
+
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* =========================
+   NAVIGATION BUTTON
+========================= */
+
+.navigation-btn,
+.nav-button {
+  background: black;
+  color: white;
+
+  text-decoration: none;
+
+  padding: 14px 30px;
+
+  border-radius: 12px;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.navigation-btn:hover,
+.nav-button:hover {
+  background: #23935a;
+  transform: translateY(-3px);
+}
+
+.pin {
+  font-size: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   LIVE TOPBAR
+========================= */
+
+.map img {
+  width: 130%;
+  height: auto;
+  border-radius: 16px;
+  margin-left: -40px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.text-messe {
+  padding-left: 300px;
+}
+
+.price-section {
+  margin-top: 10px;
+}
+
+
+.time {
+  text-align: left;
+}
+
+.cost {
+  text-align: right;
+  font-weight: bold;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+/* Extra Abstand zwischen Blöcken */
+.price-group {
+  margin-bottom: 18px;
+}
+
+/* optional: Überschriften etwas hervorheben */
+.price-row.header {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+
+
+/* =========================
+   HEADER + NAVIGATION (Überarbeitet)
+========================= */
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Logo links und Hamburger rechts  */
+  align-items: center;
+  padding: 20px 30px;
+  position: relative; /* absolute Positionierung des mobilen Menüs */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger-Button im Desktop-Zustand verstecken */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #111; 
+}
+
+/* Standard-Zustand für Desktop-Menü */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+
+----------------------
+
+/* Desktop */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Hamburger hidden am Desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+
+/* Desktop */
+.parking-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .parking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Handy */
+@media (max-width: 600px) {
+    .parking-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .topbar {
+        font-size: 0.9rem;
+    }
+}
+
+/**Top 5-Tabelle auf Smartphone**/
+@media (max-width: 768px) {
+
+  thead {
+    display: none;
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+  }
+
+  td {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 6px;
+  }
+
+  .route-btn {
+    width: 100%;
+  }
+}
+/* =========================
+    MOBILE RESPONSIVENESS (Ab 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /*Hamburger Handy sichtbar */
+  .hamburger {
+    display: block !important; 
+    color: #111 !important;
+  }
+
+  /* Versteckt die normale Leiste und baut das mobile Menü */
+  .nav-buttons {
+    display: none !important; /* !important zwingt CSS das Desktop-Menü zu überschreiben */
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important; 
+    right: 20px !important;
+    background: rgba(0, 0, 0, 0.95) !important; 
+    padding: 20px !important;
+    border-radius: 12px !important;
+    min-width: 220px !important;
+    z-index: 999 !important;
+    gap: 10px !important;
+  }
+
+  /* Schaltet das Menü sichtbar, wenn aktiv ge-toggled */
+  .nav-buttons.active {
+    display: flex !important; 
+  }
+
+  /* Streckt die Buttons im Menü auf volle Breite */
+  .nav-btn {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block !important;
+    position: absolute;
+    top: 25px;       /* Richtet den Button vertikal im Header aus */
+    right: 20px;     /* Setzt den Button ganz nach rechts */
+    color: #111 !important;
+    z-index: 1001;   /* Liegt über dem ausklappenden Menü */
+  }
+
+  .nav-buttons {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important; /* Rechnet jetzt exakt ab der Unterkante des Headers */
+    right: 20px !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    min-width: 220px !important;
+    z-index: 1000 !important;
+    gap: 10px !important;
+  }
+  
+  .nav-buttons.active {
+    display: flex !important;
+  }
+}
+
+
+/* =========================
+    Stadtplan (Ab 768px)
+========================= */
+@media (max-width: 768px) {
+  
+  /* ... Deine bestehenden Hamburger & Nav-Buttons Regeln ... */
+
+  .map-page {
+    flex-direction: column; /* Setzt die Legende über die Karte */
+    align-items: center;    /* Zentriert Legende und Karte auf dem Handy */
+    gap: 30px;              /* Verringert den Abstand zwischen Legende und Karte */
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .legend {
+    margin-top: 20px;       
+    width: 100%;
+    max-width: 400px;       /* Verhindert, dass die Legende zu breit gezogen wird */
+    padding: 0 20px;
+  }
+
+  .legend-item {
+    margin-bottom: 25px;    /* Verringert den Abstand zwischen den einzelnen Icons */
+    justify-content: flex-start;
+  }
+
+  .legend-item i {
+    font-size: 45px;        /* Macht die Pins auf dem Handy etwas kleiner als 70px */
+  }
+}
+
+@media (max-width: 768px) {
+
+  .map-container {
+    width: 100%;           
+    max-width: 90%;         
+    margin-top: 10px;
+  }
+
+  #map {
+    height: 400px;          /* Verhindert, dass die Map im Handy-Modus den ganzen Bildschirm schluckt */
+  }
+}
+
+/* =========================
+    über uns (Ab 768px)
+========================= */
+
+@media (max-width: 1220px) {
+
+  /* 1. Bild-Box responsiv machen & Abstände nullen */
+  .about-image img {
+    width: 100% !important;     /* Nutzt die Breite des Handys */
+    max-width: 320px !important; /* Verhindert, dass das Bild riesig wird */
+    margin-left: auto !important; /* Zentriert das Bild horizontal */
+    margin-right: auto !important;
+    margin-top: 30px !important;  /* Schöner Abstand nach oben zum Header */
+    display: block !important;
+  }
+
+  /* 2. Text-Box responsiv machen */
+  .about-section {
+    margin-top: 30px !important; /* Abstand zwischen Bild und Text */
+    width: 100% !important;
+    padding: 0 20px !important;  /* Schöner Rand links und rechts auf dem Handy */
+  }
+
+  /* 3. Starre Desktop-Verschiebungen komplett zurücksetzen */
+  .about-text {
+    margin-left: 0 !important;   /* Löscht den Links-Verschieber */
+    margin-top: 0 !important;    /* Löscht das negative Hochziehen (-510px) */
+    max-width: 100% !important;  /* Nutzt die volle Handybreite */
+    text-align: center !important; /* Zentriert den Text auf dem Smartphone */
+  }
+
+  
+  .about-text h2 {
+    margin-bottom: 20px !important;
+    text-align: center !important; 
+  }
+}
+
+
+/* =========================
+    Impressum (Ab 768px)
+========================= */
+
+@media (max-width: 768px) {
+
+   .impressum-section {
+    margin: 40px auto !important; /* Weniger Abstand nach oben/unten auf dem Handy */
+    width: 100% !important;
+    padding: 0 20px !important;  /* Verhindert, dass der Text am Displayrand klebt */
+  }
+
+  /* Schriftgrößen der Überschriften auf dem Handy leicht verkleinern */
+  .impressum-section h1 {
+    font-size: 28px !important;  /* Hauptüberschrift etwas kompakter */
+    margin-bottom: 30px !important;
+  }
+
+  .impressum-section h2 {
+    font-size: 20px !important;  /* Zwischenüberschriften anpassen */
+    margin: 30px 0 15px !important;
+  }
+
+  /* Zeilenabstand und Textfluss optimieren */
+  .impressum-section p {
+    font-size: 16px !important;  /* Angenehme Lesegrösse für Smartphones */
+    line-height: 1.6 !important;
+    margin-bottom: 15px !important;
+  }
+  .parking-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .parking-title {
+    font-size: 32px;
+    word-break: break-word;
+  }
+
+  .parking-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 45px;
+  }
+}

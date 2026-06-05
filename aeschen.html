@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Parkhaus Finder Basel</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Hintergrund -->
+  <div class="overlay"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+
+  <div class="logo">
+    <i class="fa-solid fa-location-dot"></i>
+    <h1>Parkhaus-Finder-<span>Basel</span></h1>
+  </div>
+
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <nav class="nav-buttons" id="navMenu">
+
+    <a href="stadtplan.html" class="nav-btn">
+      Stadtplan
+    </a>
+
+    <a href="index.html" class="nav-btn">
+      Parkingfinder
+    </a>
+
+    <a href="ueber_uns.html" class="nav-btn">
+      Über uns
+    </a>
+  </nav>
+
+</header>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div>Parkhaussuche</div>
+    <div id="date">--.--.--</div>
+    <div id="clock">--:--:--</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <div class="parking-header">
+      <div class="parking-icon">P</div>
+      <div class="parking-title">Aeschen</div>
+    </div>
+
+    <div class="free-spaces">
+      Parkplätze frei:
+      <span id="freeCount">48</span>
+    </div>
+
+    <div class="info">
+
+      <p>
+        <span class="label">Adresse:</span>
+        Aeschengraben 9, 4051 Basel
+
+
+
+      <p>
+        <span class="label">Öffnungszeiten:</span>
+        24 Stunden, täglich
+      </p>
+
+<p>
+  <span class="label">Parktarife:</span>
+</p>
+
+<div class="price-section">
+
+  <div class="price-group">
+
+    <div class="price-row header">
+      <div class="time">Montag bis Samstag (06.00–23.00 Uhr)</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">0 bis 6 Std.</div>
+      <div class="cost">CHF 3.00 / Std.</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">jede weitere Std.</div>
+      <div class="cost">CHF 2.00 / Std.</div>
+    </div>
+
+  </div>
+
+  <div class="price-group">
+
+    <div class="price-row header">
+      <div class="time">23.00–06.00 Uhr (Nacht)</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">0 bis 6 Std.</div>
+      <div class="cost">CHF 1.50 / Std.</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">jede weitere Std.</div>
+      <div class="cost">CHF 1.00 / Std.</div>
+    </div>
+
+  </div>
+
+  <div class="price-group">
+
+    <div class="price-row header">
+      <div class="time">Sonntag (00.00–24.00 Uhr)</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">0 bis 6 Std.</div>
+      <div class="cost">CHF 1.50 / Std.</div>
+    </div>
+
+    <div class="price-row">
+      <div class="time">jede weitere Std.</div>
+      <div class="cost">CHF 1.00 / Std.</div>
+    </div>
+
+  </div>
+
+</div>
+      <p class="website">
+        <span class="label">Webseite:</span>
+        <a href="https://www.basel.com/de/attraktionen/parkhaus-aeschen-1890895c75" target="_blank">
+          www.parkhaus-aeschen.ch
+        </a>
+      </p>
+
+    </div>
+
+    <div class="map">
+      <img src="bilder/karte_aeschen.jpg" alt="Karte Aeschen">
+    </div>
+
+    <button class="nav-btn" onclick="navigateToParking()">
+      zur Navigation
+    </button>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="impressum.html">Impressum</a>
+  </footer>
+
+  
+ <!-- SCRIPT -->
+   <script type="module" src="js/detail-ansich.js"></script>
+
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+</script>
+
+    
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = String(now.getFullYear()).slice(2);
+
+      const clock = document.getElementById('clock');
+      const date = document.getElementById('date');
+
+      if (clock) clock.textContent = `${hours}:${minutes}:${seconds}`;
+      if (date) date.textContent = `${day}.${month}.${year}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function navigateToParking() {
+      window.open(
+        "https://maps.app.goo.gl/D6crChaKEEGRDYrr5",
+        "_blank"
+      );
+    }
+  </script>
+
+</body>
+</html>
