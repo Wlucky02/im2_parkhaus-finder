@@ -10,11 +10,10 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
 
-  </head>
+</head>
 
 
 <body>
@@ -23,44 +22,44 @@
   <div class="overlay"></div>
 
 
-<!-- HEADER -->
-<header class="header">
+  <!-- HEADER -->
+  <header class="header">
 
-  <div class="logo">
-    <i class="fa-solid fa-location-dot"></i>
-    <h1>Parkhaus-Finder-<span>Basel</span></h1>
-  </div>
+    <div class="logo">
+      <i class="fa-solid fa-location-dot"></i>
+      <h1>Parkhaus-Finder-<span>Basel</span></h1>
+    </div>
 
-  <!-- Navigation -->
-  <nav class="nav-buttons" id="navMenu">
+    <!-- Navigation -->
+    <nav class="nav-buttons" id="navMenu">
 
-    <a href="stadtplan.html" class="nav-btn">Stadtplan</a>
-    <a href="index.html" class="nav-btn">Parkingfinder</a>
-    <a href="ueber_uns.html" class="nav-btn">Über uns</a>
+      <a href="stadtplan.html" class="nav-btn">Stadtplan</a>
+      <a href="index.html" class="nav-btn">Parkingfinder</a>
+      <a href="ueber_uns.html" class="nav-btn">Über uns</a>
 
-  </nav>
+    </nav>
 
-  <!-- Timer -->
-  <div class="topbar">
-    <div>Parkhaussuche</div>
-    <div id="date">--.--.--</div>
-    <div id="clock">--:--:--</div>
-  </div>
+    <!-- Timer -->
+    <div class="topbar">
+      <div>Parkhaussuche</div>
+      <div id="date">--.--.--</div>
+      <div id="clock">--:--:--</div>
+    </div>
 
-  <!-- Hamburger -->
-  <button class="hamburger" id="hamburger">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-</header>
-  
+  </header>
+
 
 
   <!-- MAIN -->
-  
+
   <main>
 
-    
+
     <!-- KACHELN -->
     <section class="parking-grid" id="parkingGrid"></section>
 
@@ -86,28 +85,33 @@
     </section>
 
   </main>
-
-  <!-- FOOTER -->
-  <footer>
-  <a href="impressum.html">Impressum</a>
-  </footer>
-
-  <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+  
+  <script src="js/script.js" type="module"></script>
   <script src="js/kacheln.js" type="module"></script>
 
 
-<script>
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+  <!-- FOOTER -->
+  <footer>
+    <a href="impressum.html">Impressum</a>
+  </footer>
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-</script>
+  
 
 
-<script>
-   function updateClock() {
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+
+
+  <script>
+    function updateClock() {
       const now = new Date();
 
       const h = String(now.getHours()).padStart(2, "0");
@@ -130,4 +134,5 @@ hamburger.addEventListener("click", () => {
 
 
 </body>
+
 </html>

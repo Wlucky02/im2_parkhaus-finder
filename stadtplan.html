@@ -6,16 +6,11 @@
 
   <title>Parkhaus Finder Basel</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet"
-        href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <style>
     #map {
@@ -24,85 +19,38 @@
   </style>
 </head>
 
-<script>
-  function updateClock() {
-
-    const now = new Date();
-
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-
-    const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const year = String(now.getFullYear()).slice(2);
-
-    document.getElementById("clock").textContent =
-      `${hours}:${minutes}:${seconds}`;
-
-    document.getElementById("date").textContent =
-      `${day}.${month}.${year}`;
-  }
-
-  setInterval(updateClock, 1000);
-
-  updateClock();
-  
-</script>
-
 <body>
 
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-  <!-- Hintergrund -->
   <div class="overlay"></div>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="logo">
       <i class="fa-solid fa-location-dot"></i>
       <h1>Parkhaus-Finder-<span>Basel</span></h1>
     </div>
 
-    <!-- Hamburger -->
-  <button class="hamburger" id="hamburger">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+    <button class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-  <nav class="nav-buttons" id="navMenu">
-
-    <a href="stadtplan.html" class="nav-btn">
-      Stadtplan
-    </a>
-
-    <a href="index.html" class="nav-btn">
-      Parkingfinder
-    </a>
-
-    <a href="ueber_uns.html" class="nav-btn">
-      Über uns
-    </a>
-  </nav>
-
-
-
-
+    <nav class="nav-buttons" id="navMenu">
+      <a href="stadtplan.html" class="nav-btn">Stadtplan</a>
+      <a href="index.html" class="nav-btn">Parkingfinder</a>
+      <a href="ueber_uns.html" class="nav-btn">Über uns</a>
+    </nav>
   </header>
 
-  <!-- TOPBAR -->
-<div class="topbar">
-  <div>Parkhaussuche</div>
-  <div id="date">--.--.--</div>
-  <div id="clock">--:--:--</div>
-</div>
+  <div class="topbar">
+    <div>Parkhaussuche</div>
+    <div id="date">--.--.--</div>
+    <div id="clock">--:--:--</div>
+  </div>
 
-  <!-- SEITE -->
   <section class="map-page">
 
-    <!-- LEGENDE -->
     <div class="legend">
-
       <div class="legend-item">
         <i class="fa-solid fa-location-dot green"></i>
         <div>
@@ -129,42 +77,53 @@
           <p>Parkhausbelegung</p>
         </div>
       </div>
-
     </div>
 
-    <!-- KARTE -->
     <div class="map-container">
-
       <div id="map"></div>
-
-
     </div>
   </section>
 
-  <!-- Leaflet Init -->
-  <script>
-
-  </script>
-
-  <!-- eigenes Script -->
-  <script src="js/stadtplan.js" type="module"></script>
-
-  <!-- FOOTER -->
   <footer>
     <a href="impressum.html">Impressum</a>
   </footer>
 
+  <script>
+    function updateClock() {
+      const now = new Date();
 
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
 
-<script>
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
+      const day = String(now.getDate()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = String(now.getFullYear()).slice(2);
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-</script>
+      const clockEl = document.getElementById("clock");
+      const dateEl = document.getElementById("date");
 
+      // Sicherheitscheck, damit nichts abstürzt
+      if (clockEl) clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+      if (dateEl) dateEl.textContent = `${day}.${month}.${year}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("navMenu");
+
+    if (hamburger && navMenu) {
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    }
+  </script>
+
+  <script src="js/stadtplan.js" type="module"></script>
 
 </body>
 </html>

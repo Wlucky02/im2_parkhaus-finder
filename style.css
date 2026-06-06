@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 * {
   margin: 0;
@@ -9,9 +7,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =========================
-   BASIS / BODY
-========================= */
+/* BASIS / BODY */
 
 body {
   min-height: 100vh;
@@ -20,9 +16,7 @@ body {
   background: #f2f2f2;
 }
 
-/* =========================
-   HINTERGRUND
-========================= */
+/* HINTERGRUND */
 
 .overlay {
   position: fixed;
@@ -39,13 +33,11 @@ body {
   z-index: -1;
 }
 
-/* =========================
-   HEADER + NAVIGATION
-========================= */
+/* HEADER + NAVIGATION */
 
 .header {
   display: flex;
-  flex-direction: column;   /* <-- alles untereinander */
+  flex-direction: column;   /* alles untereinander */
   align-items: center;
   gap: 20px;
   padding: 20px;
@@ -73,7 +65,7 @@ body {
   font-weight: bold;
 }
 
-/* Hamburger optional oben rechts */
+/* Hamburger oben rechts */
 .hamburger {
   position: absolute;
   top: 15px;
@@ -104,9 +96,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* =========================
-   MAIN / GRID (Startseite)
-========================= */
+/* MAIN / GRID (Startseite) */
 
 main {
   width: 95%;
@@ -162,9 +152,7 @@ main {
   font-size: 17px;
 }
 
-/* =========================
-   TOP SECTION (Tabelle)
-========================= */
+/* TOP SECTION (Tabelle) */
 
 .top-section {
   margin-top: 100px;
@@ -222,9 +210,7 @@ td {
   background: #2da44e;
 }
 
-/* =========================
-   MAP PAGE
-========================= */
+/* MAP PAGE */
 
 .map-page {
   display: flex;
@@ -317,9 +303,7 @@ td {
 .marker.orange { background: #e28712; }
 .marker.red { background: #ff1048; }
 
-/* =========================
-   ABOUT PAGE
-========================= */
+/* ABOUT PAGE */
 
 .about-section {
   display: flex;
@@ -364,9 +348,7 @@ td {
   line-height: 1.5;
 }
 
-/* =========================
-   IMPRESSUM
-========================= */
+/* IMPRESSUM */
 
 .impressum-section {
   max-width: 900px;
@@ -391,9 +373,7 @@ td {
   margin-bottom: 20px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -437,9 +417,7 @@ footer a:hover {
 }
 
 css
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 * {
   margin: 0;
@@ -447,9 +425,7 @@ css
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -459,9 +435,7 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================
-   HINTERGRUND
-========================= */
+/* HINTERGRUND */
 
 .overlay {
   position: fixed;
@@ -480,16 +454,14 @@ body {
   z-index: -1;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  position: relative; /* Das fesselt das mobile Menü an den oberen Header-Bereich! */
+  position: relative; /* Das fesselt das mobile Menü an den oberen Header-Bereich */
 }
 
 
@@ -518,9 +490,7 @@ body {
   color: #29a866;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAVIGATION */
 
 .nav-buttons {
   display: flex;
@@ -550,9 +520,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* MAIN CONTAINER */
 
 .container {
   width: 90%;
@@ -563,9 +531,7 @@ body {
   text-align: center;
 }
 
-/* =========================
-   TOPBAR
-========================= */
+/* TOPBAR */
 
 .topbar {
   display: flex;
@@ -578,9 +544,7 @@ body {
   margin-bottom: 35px;
 }
 
-/* =========================
-   PARKING HEADER
-========================= */
+/* PARKING HEADER */
 
 .parking-header {
   background: #29a866;
@@ -622,9 +586,7 @@ body {
   font-weight: 700;
 }
 
-/* =========================
-   FREIE PLÄTZE
-========================= */
+/* FREIE PLÄTZE */
 
 .free-spaces {
   margin-bottom: 55px;
@@ -638,9 +600,7 @@ body {
   margin-left: 12px;
 }
 
-/* =========================
-   INFO BOX
-========================= */
+/* INFO BOX */
 
 .info {
   max-width: 650px;
@@ -670,9 +630,7 @@ body {
   margin-right: 8px;
 }
 
-/* =========================
-   PREISE
-========================= */
+/* PREISE */
 
 .price-section {
   margin-left: 20px;
@@ -683,18 +641,14 @@ body {
   margin-bottom: 10px;
 }
 
-/* =========================
-   WEBSITE
-========================= */
+/* WEBSITE */
 
 .website a {
   color: black;
   text-decoration: underline;
 }
 
-/* =========================
-   MAP
-========================= */
+/* MAP */
 
 .map {
   width: 100%;
@@ -719,9 +673,7 @@ body {
   border: none;
 }
 
-/* =========================
-   NAVIGATION BUTTON
-========================= */
+/* NAVIGATION BUTTON */
 
 .navigation-btn,
 .nav-button {
@@ -750,9 +702,7 @@ body {
   font-size: 30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
   text-align: center;
@@ -769,9 +719,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   LIVE TOPBAR
-========================= */
+/* LIVE TOPBAR */
 
 .map img {
   width: 130%;
@@ -820,7 +768,7 @@ footer a:hover {
   margin-bottom: 18px;
 }
 
-/* optional: Überschriften etwas hervorheben */
+/* Überschriften etwas hervorheben */
 .price-row.header {
   font-weight: bold;
   margin-bottom: 6px;
@@ -828,9 +776,7 @@ footer a:hover {
 
 
 
-/* =========================
-   HEADER + NAVIGATION (Überarbeitet)
-========================= */
+/* HEADER + NAVIGATION (Überarbeitet) */
 
 .header {
   display: flex;
@@ -960,9 +906,7 @@ footer a:hover {
     width: 100%;
   }
 }
-/* =========================
-    MOBILE RESPONSIVENESS (Ab 768px)
-========================= */
+/* MOBILE RESPONSIVENESS (Ab 768px) */
 @media (max-width: 768px) {
 
   /*Hamburger Handy sichtbar */
@@ -1029,12 +973,10 @@ footer a:hover {
 }
 
 
-/* =========================
-    Stadtplan (Ab 768px)
-========================= */
+/* Stadtplan (Ab 768px) */
 @media (max-width: 768px) {
   
-  /* ... Deine bestehenden Hamburger & Nav-Buttons Regeln ... */
+  /* bestehenden Hamburger & Nav-Buttons Regeln */
 
   .map-page {
     flex-direction: column; /* Setzt die Legende über die Karte */
@@ -1076,9 +1018,7 @@ footer a:hover {
   }
 }
 
-/* =========================
-    über uns (Ab 768px)
-========================= */
+/* über uns (Ab 768px) */
 
 @media (max-width: 1220px) {
 
@@ -1115,9 +1055,7 @@ footer a:hover {
 }
 
 
-/* =========================
-    Impressum (Ab 768px)
-========================= */
+/* Impressum (Ab 768px) */
 
 @media (max-width: 768px) {
 
@@ -1144,6 +1082,9 @@ footer a:hover {
     line-height: 1.6 !important;
     margin-bottom: 15px !important;
   }
+
+  @media (max-width: 768px) {
+
   .parking-header {
     flex-direction: column;
     gap: 15px;
@@ -1161,4 +1102,5 @@ footer a:hover {
     height: 70px;
     font-size: 45px;
   }
+}
 }

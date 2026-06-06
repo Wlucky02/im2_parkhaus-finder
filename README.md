@@ -1,9 +1,9 @@
 <h2> 26FS-IM2 </h2>
 
 Team
+
 - Wladislaw Belotti
 - Leandro Baumann
-
 
 <h2> Kurzbeschreibung: </h2>
 Wir alle kennen das. Wieder einmal sind wir auf der Suche nach einem passenden Parkplatz. Wir haben die Lösung! Der Parkhausfinder Basel schlägt dir das passende Parkhaus vor und zeigt dir die Anzahl der freien Parkplätze in Echtzeit an, sodass du dir keine Sorgen machen musst, ob das Parkhaus voll ist oder nicht. Mit der Navigation kannst du direkt deine Route planen und mithilfe des Stadtplans hast du alle Parkhäuser immer im Überblick.
@@ -18,4 +18,4 @@ Wir hatten grosse Schwierigkeiten mit GitHub und dem Code-Teilen, weshalb wir un
 Das Hamburger Menü ist in der Handyansicht nicht an den Header angeschlossen. Der Grund ist das Logo. Wir haben jedoch nicht herausgefunden, wie wir das Menü über den Header legen können.
 
 <h2> Ressourcen </h2>
-Parkhausfinder Basel API: https://data.bs.ch/api/explore/v2.1/catalog/datasets/100088/records?limit=20 
+Parkhausfinder Basel API: https://data.bs.ch/api/explore/v2.1/catalog/datasets/100088/records?limit=20
